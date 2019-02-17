@@ -17,12 +17,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjZ-3z-u9A">
+                                <rect key="frame" x="163" y="328.5" width="49" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="RecordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zPr-Xv-CwE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHO-Y9-FJo">
+                                <rect key="frame" x="136.5" y="357.5" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R63-TJ-UEr">
+                                <rect key="frame" x="136.5" y="386.5" width="102" height="30"/>
+                                <state key="normal" title="Stop recording"/>
+                                <connections>
+                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hIP-kC-wFc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="AHO-Y9-FJo" firstAttribute="centerX" secondItem="YjZ-3z-u9A" secondAttribute="centerX" id="8eP-DN-EcU"/>
+                            <constraint firstItem="AHO-Y9-FJo" firstAttribute="top" secondItem="YjZ-3z-u9A" secondAttribute="bottom" constant="8" id="AFj-2S-fjU"/>
+                            <constraint firstItem="YjZ-3z-u9A" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EXJ-u0-rmm"/>
+                            <constraint firstItem="R63-TJ-UEr" firstAttribute="centerX" secondItem="AHO-Y9-FJo" secondAttribute="centerX" id="MaV-gN-PDf"/>
+                            <constraint firstItem="AHO-Y9-FJo" firstAttribute="firstBaseline" secondItem="YjZ-3z-u9A" secondAttribute="baseline" constant="24.5" symbolType="layoutAnchor" id="NkA-2W-jUk"/>
+                            <constraint firstItem="YjZ-3z-u9A" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="dLK-hN-idv"/>
+                            <constraint firstItem="R63-TJ-UEr" firstAttribute="top" secondItem="AHO-Y9-FJo" secondAttribute="bottom" constant="8" id="u2W-qJ-1Cr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="recordLabel" destination="AHO-Y9-FJo" id="pFg-aN-Rbx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0vG-sW-VV4">
+                    <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                </button>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="119.1904047976012"/>
         </scene>
     </scenes>
 </document>
