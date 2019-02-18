@@ -11,6 +11,8 @@ import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
     
+    // MARK: - Declaring variables, and connecting and setting buttons.
+    
     // The 7 lines are the connections of the buttons on the Play Sounds View Controller
     // Because the extentension, this variables are used on the playsoundsviewcontroller-audio.swift
     @IBOutlet weak var snailButton: UIButton!
@@ -56,10 +58,22 @@ class PlaySoundsViewController: UIViewController {
         stopAudio()
     }
     
-    // MARK: Here the next method are going to run to set up the view when the Play Sounds VC is called
+    // MARK: - Setting the view of Play Sounds VC
+    
+    // Here the next method are going to run to set up the view when the Play Sounds VC is called
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setting the contentMode of each image.
+        snailButton.imageView?.contentMode = .scaleAspectFit
+        chipmunkButton.imageView?.contentMode = .scaleAspectFit
+        rabbitButton.imageView?.contentMode = .scaleAspectFit
+        vaderButton.imageView?.contentMode = .scaleAspectFit
+        echoButton.imageView?.contentMode = .scaleAspectFit
+        reverbButton.imageView?.contentMode = .scaleAspectFit
+        stopButton.imageView?.contentMode = .scaleAspectFit
+        
         setupAudio()
     }
     

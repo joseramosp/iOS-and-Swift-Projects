@@ -12,7 +12,9 @@ import AVFoundation  // This will be the pack that will give all audio methods
 // In other to delegate and AVFoundation to a variable, we need to inherit AVAudioRecorderDelegate
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
-    // Creating a varible of type AVAudioRecorder 
+    // MARK: - Declaring variables, and connecting and setting buttons.
+    
+    // Creating a varible of type AVAudioRecorder
     var audioRecorder: AVAudioRecorder!
     
     // The next three IBOutlet are connect with the Start Record and Stop Recoding buttons, and the label
@@ -30,12 +32,20 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewWillAppear(animated)
     }
     
+    // MARK: - Seting all BIActions
+    
+    // This method toggles the status of recordButton and stopRecordingButton, and change the recordingLabel text
+    func configureRecordSoundsUI(_ isRecording:Bool = false) {
+        recordingLabel.text = isRecording ? "Recording in progress": "Tap to Record"
+        recordButton.isEnabled = !isRecording
+        stopRecordingButton.isEnabled = isRecording
+    }
+    
     // The next method will be called when the Start Recording button is pressed
     // This method will store the audio in a location and save that URL in a constant
     @IBAction func recordAudio(_ sender: Any) {
-        recordingLabel.text = "Recording in progress"
-        stopRecordingButton.isEnabled = true
-        recordButton.isEnabled = false
+        
+        configureRecordSoundsUI(true)
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -55,13 +65,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     // This method will be called when the Stop Recording button is pressed.
     @IBAction func stopRecording(_ sender: Any) {
-        recordButton.isEnabled = true               // This line is enabling the record button
-        stopRecordingButton.isEnabled = false
-        recordingLabel.text = "Tap to Record"
+        configureRecordSoundsUI(false)
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
+    
+    // MARK: - Preparing to call the segue and switch to another VC
     
     // This is the method that will switch the app to the Play Sounds VC.
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
