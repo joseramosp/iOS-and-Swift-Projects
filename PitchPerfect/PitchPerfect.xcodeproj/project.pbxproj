@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8204EDF2221B26AD00B64129 /* PitchPerfect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PitchPerfect.entitlements; sourceTree = "<group>"; };
 		8248AE33221A71B10031AD59 /* playsoundsviewcontroller-audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "playsoundsviewcontroller-audio.swift"; sourceTree = "<group>"; };
 		825C7C11221A4C4E002C9837 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 		82A38B682219048E00F83801 /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,11 +40,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8204EDF3221B26AD00B64129 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		82A38B5F2219048E00F83801 = {
 			isa = PBXGroup;
 			children = (
 				82A38B6A2219048E00F83801 /* PitchPerfect */,
 				82A38B692219048E00F83801 /* Products */,
+				8204EDF3221B26AD00B64129 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +67,7 @@
 		82A38B6A2219048E00F83801 /* PitchPerfect */ = {
 			isa = PBXGroup;
 			children = (
+				8204EDF2221B26AD00B64129 /* PitchPerfect.entitlements */,
 				82A38B6B2219048E00F83801 /* AppDelegate.swift */,
 				82A38B6D2219048E00F83801 /* RecordSoundsViewController.swift */,
 				82A38B6F2219048E00F83801 /* Main.storyboard */,
@@ -102,6 +112,11 @@
 				TargetAttributes = {
 					82A38B672219048E00F83801 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
